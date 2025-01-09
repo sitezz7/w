@@ -160,6 +160,38 @@ button:disabled {
     color: #0f0;
 }
 
+#internet-status-btn {
+    cursor: default; /* تغییر cursor به default زیرا دکمه غیرفعال است */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* فاصله بین آیکون و متن */
+    transition: all 0.3s ease;
+}
+
+#internet-status-btn.connected {
+    background-color: #0f0; /* سبز روشن */
+    color: #000;
+    border-color: #0f0;
+}
+
+#internet-status-btn.disconnected {
+    background-color: red; /* قرمز */
+    color: #fff;
+    border-color: red;
+}
+
+#wifi-icon {
+    font-size: 1.2rem;
+}
+
+#internet-status-btn.connected #wifi-icon {
+    color: #000; /* رنگ آیکون در حالت Online */
+}
+
+#internet-status-btn.disconnected #wifi-icon {
+    color: #fff; /* رنگ آیکون در حالت Offline */
+}
+
 .result {
     font-size: 1.2rem;
     color: #0f0;
