@@ -1,0 +1,367 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    text-align: center; /* Center align text */
+}
+
+.binary-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.binary {
+    position: absolute;
+    color: rgba(0, 255, 0, 0.1);
+    font-size: 1.8rem;
+    user-select: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.container {
+    text-align: center; /* Center align text */
+    background-color: rgba(17, 17, 17, 0.9);
+    padding: 2rem;
+    border: 2px solid #0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    z-index: 1;
+    margin: 0 auto; /* Center the container */
+    max-width: 800px; /* Limit width for desktop */
+    width: 90%; /* Relative width for mobile */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #0f0;
+}
+
+/* BNB Logo and Price Section */
+.bnb-price-section {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align items */
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.bnb-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.bnb-price {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+.usd-symbol {
+    font-size: 0.9rem;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+.tick-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f0;
+    font-size: 0.9rem;
+    text-shadow: 0 0 10px #0f0;
+}
+
+.timer {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+.search-box {
+    margin-bottom: 1.5rem;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #000;
+    color: #0f0;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    text-align: center; /* Center align text */
+    outline: none;
+}
+
+.controls {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center; /* Center align buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #000;
+    color: #0f0;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0f0;
+    color: #000;
+    box-shadow: 0 0 10px #0f0;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #000;
+    color: #0f0;
+}
+
+.result {
+    font-size: 1.2rem;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+    margin-top: 1.5rem;
+}
+
+#result-text {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align text */
+}
+
+#status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    margin-left: 10px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+#status-indicator.green {
+    background-color: #0f0;
+    animation: none;
+}
+
+#target-line {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #000;
+    color: #0f0;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 0.5rem;
+    text-align: center; /* Center align text */
+}
+
+#copy-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #000;
+    color: #0f0;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#copy-btn:hover {
+    background-color: #0f0;
+    color: #000;
+    box-shadow: 0 0 10px #0f0;
+}
+
+#copy-message {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#copy-message.visible {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Wallet Download Section */
+.download-section {
+    margin-top: 2rem;
+    text-align: center; /* Center align text */
+}
+
+.download-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+.wallet-links {
+    display: flex;
+    justify-content: center; /* Center align links */
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow wrapping for mobile */
+}
+
+.wallet-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #0f0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    width: 120px;
+    justify-content: center; /* Center align text and icon */
+}
+
+.wallet-link:hover {
+    color: #000;
+    background-color: #0f0;
+    box-shadow: 0 0 10px #0f0;
+}
+
+.wallet-link img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        overflow: auto; /* Enable scrolling on mobile */
+        height: auto; /* Auto height for mobile */
+        padding: 20px 0; /* Add padding to top and bottom */
+    }
+
+    .container {
+        width: 100%; /* Full width on mobile */
+        padding: 1rem; /* Reduce padding for mobile */
+        border-radius: 0; /* Remove border-radius for mobile */
+        box-shadow: none; /* Remove shadow for mobile */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Reduce font size for mobile */
+    }
+
+    /* BNB Price, Logo, and Checkmark Box */
+    .bnb-price-section {
+        flex-direction: row; /* Horizontal layout */
+        gap: 10px; /* Space between elements */
+    }
+
+    .bnb-price {
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    .timer {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    #search-input {
+        width: 100%; /* Full width on mobile */
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    /* Buttons in a horizontal layout */
+    .controls {
+        flex-direction: row; /* Horizontal layout */
+        gap: 10px; /* Space between buttons */
+    }
+
+    button {
+        width: auto; /* Auto width for buttons */
+        margin: 0; /* Remove margin */
+    }
+
+    .result {
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    #target-line {
+        height: 80px; /* Reduce height */
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    .download-section h2 {
+        font-size: 1.2rem; /* Reduce font size */
+    }
+
+    /* Wallet Download Links in a horizontal layout */
+    .wallet-links {
+        flex-direction: row; /* Horizontal layout */
+        gap: 10px; /* Space between links */
+    }
+
+    .wallet-link {
+        width: auto; /* Auto width for links */
+        padding: 10px; /* Increase padding */
+        font-size: 0.8rem; /* Reduce font size */
+    }
+}

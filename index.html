@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Hacker</title>
+    <link rel="stylesheet" href="styles.css">
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div class="binary-background"></div>
+    <div class="container">
+        <h1>Wallet Hacker</h1>
+        <!-- BNB Logo and Price Section -->
+        <div class="bnb-price-section">
+            <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="BNB Logo" class="bnb-logo">
+            <div class="bnb-price">
+                <span id="bnb-price">Loading BNB price...</span>
+                <span class="usd-symbol">USD</span>
+            </div>
+            <div class="tick-box">✔️</div> <!-- Checkmark Box -->
+        </div>
+        <div class="timer" id="timer">00:00:00</div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Searching..." readonly>
+        </div>
+        <div class="controls">
+            <button id="start-btn">Start</button>
+            <button id="stop-btn" disabled>Stop</button>
+        </div>
+        <div class="result">
+            <div id="result-text">
+                Seed Phrase:
+                <div id="status-indicator"></div> <!-- Blinking Circle -->
+            </div>
+            <textarea id="target-line" readonly></textarea>
+            <button id="copy-btn">Copy</button>
+            <div id="copy-message" class="hidden">Copied!</div>
+        </div>
+        <!-- Wallet Download Section -->
+        <div class="download-section">
+            <h2>Download Wallet</h2>
+            <div class="wallet-links">
+                <a href="https://play.google.com/store/apps/details?id=io.metamask" target="_blank" class="wallet-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask">
+                    <span>MetaMask</span>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp" target="_blank" class="wallet-link">
+                    <img src="https://trustwallet.com/assets/images/media/assets/TWT.png" alt="Trust Wallet">
+                    <span>Trust</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
