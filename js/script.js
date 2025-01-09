@@ -8,6 +8,37 @@ document.getElementById('start-btn').addEventListener('click', startSearch);
 document.getElementById('stop-btn').addEventListener('click', stopSearch);
 document.getElementById('copy-btn').addEventListener('click', copyTargetLine);
 
+// تابع برای بررسی وضعیت اینترنت
+function checkInternetConnection() {
+    const internetStatusBtn = document.getElementById('internet-status-btn');
+    const internetStatusText = document.getElementById('internet-status-text');
+    const startBtn = document.getElementById('start-btn');
+
+    function updateStatus() {
+        if (navigator.onLine) {
+            internetStatusBtn.classList.remove('disconnected');
+            internetStatusBtn.classList.add('connected');
+            internetStatusText.textContent = 'Online';
+            startBtn.disabled = false;
+        } else {
+            internetStatusBtn.classList.remove('connected');
+            internetStatusBtn.classList.add('disconnected');
+            internetStatusText.textContent = 'Offline';
+            startBtn.disabled = true;
+        }
+    }
+
+    // بررسی اولیه وضعیت اینترنت
+    updateStatus();
+
+    // گوش دادن به تغییرات وضعیت اینترنت
+    window.addEventListener('online', updateStatus);
+    window.addEventListener('offline', updateStatus);
+}
+
+// فراخوانی تابع بررسی وضعیت اینترنت
+checkInternetConnection();
+
 // بارگیری کلمات از فایل محلی
 async function loadWords() {
     try {
